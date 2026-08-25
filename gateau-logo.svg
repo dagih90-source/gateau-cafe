@@ -1,0 +1,64 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,600&family=IBM+Plex+Mono:wght@500&display=swap');
+    .word { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 600; }
+    .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; font-weight: 500; }
+  </style>
+
+  <rect width="900" height="400" fill="#FBF1E1"/>
+
+  <!-- ===== Monogram badge ===== -->
+  <g transform="translate(210,200)">
+    <!-- scalloped ring, echoing the piped-icing edge from the site -->
+    <g fill="#8C2A3A">
+      <circle cx="0"   cy="-156" r="15"/>
+      <circle cx="60"  cy="-144" r="15"/>
+      <circle cx="110" cy="-108" r="15"/>
+      <circle cx="144" cy="-58"  r="15"/>
+      <circle cx="156" cy="0"    r="15"/>
+      <circle cx="144" cy="58"   r="15"/>
+      <circle cx="110" cy="108"  r="15"/>
+      <circle cx="60"  cy="144"  r="15"/>
+      <circle cx="0"   cy="156"  r="15"/>
+      <circle cx="-60" cy="144"  r="15"/>
+      <circle cx="-110" cy="108" r="15"/>
+      <circle cx="-144" cy="58"  r="15"/>
+      <circle cx="-156" cy="0"   r="15"/>
+      <circle cx="-144" cy="-58" r="15"/>
+      <circle cx="-110" cy="-108" r="15"/>
+      <circle cx="-60" cy="-144" r="15"/>
+    </g>
+    <!-- base disc -->
+    <circle cx="0" cy="0" r="146" fill="#8C2A3A"/>
+    <circle cx="0" cy="0" r="132" fill="#FBF1E1"/>
+    <!-- monogram letter -->
+    <text x="0" y="46" class="word" font-size="150" fill="#8C2A3A" text-anchor="middle">G</text>
+    <!-- thin gold ring accent -->
+    <circle cx="0" cy="0" r="132" fill="none" stroke="#C9A24B" stroke-width="3"/>
+  </g>
+
+  <!-- ===== Wordmark lockup ===== -->
+  <g transform="translate(480,0)">
+    <text x="0" y="200" class="word" font-size="104" fill="#2B1B12">Gateau</text>
+
+    <!-- piped-dot divider, matches the icing scallops used across the brand -->
+    <g fill="#C9A24B" transform="translate(4,224)">
+      <circle cx="0"   cy="0" r="5"/>
+      <circle cx="20"  cy="0" r="5"/>
+      <circle cx="40"  cy="0" r="5"/>
+      <circle cx="60"  cy="0" r="5"/>
+      <circle cx="80"  cy="0" r="5"/>
+      <circle cx="100" cy="0" r="5"/>
+      <circle cx="120" cy="0" r="5"/>
+      <circle cx="140" cy="0" r="5"/>
+      <circle cx="160" cy="0" r="5"/>
+      <circle cx="180" cy="0" r="5"/>
+      <circle cx="200" cy="0" r="5"/>
+      <circle cx="220" cy="0" r="5"/>
+      <circle cx="240" cy="0" r="5"/>
+      <circle cx="260" cy="0" r="5"/>
+    </g>
+
+    <text x="4" y="266" class="mono" font-size="21" letter-spacing="4" fill="#8C2A3A">KAZANCHIS · ADDIS ABABA</text>
+  </g>
+</svg>
