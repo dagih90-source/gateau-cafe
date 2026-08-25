@@ -17,3 +17,444 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+    
+    --cream:#FBF1E1;
+    --cream-2:#F3E6CE;
+    --espresso:#2B1B12;
+    --ink:#2A1D16;
+    --cherry:#8C2A3A;
+    --cherry-dark:#6E1F2B;
+    --toffee:#C17A3D;
+    --gold:#C9A24B;
+    --line: rgba(43,27,18,0.14);
+    --max: 1120px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    <img src="cake.jpg" alt="Delicious Chocolate Cake" width="300">
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Fraunces', serif; margin:0; font-weight:600;}
+  p{margin:0;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--cherry);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,241,225,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .wordmark{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:600;
+    font-size:1.5rem; letter-spacing:0.01em;
+  }
+  .nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0; font-size:0.92rem;}
+  .nav-links a{text-decoration:none; opacity:0.8;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{
+    display:inline-block; padding:9px 18px; border-radius:999px;
+    background:var(--cherry); color:var(--cream); text-decoration:none;
+    font-size:0.88rem; font-weight:600; white-space:nowrap;
+  }
+  @media (max-width:720px){ .nav-links{display:none;} }
+
+  /* ---------- SCALLOP DIVIDER (signature element: iced border) ---------- */
+  .scallop{
+    height:22px; width:100%;
+    background:
+      radial-gradient(circle at 11px 0, transparent 10px, var(--scallop-color,var(--cherry)) 11px)
+      top left / 22px 22px repeat-x;
+  }
+  .scallop.up{ transform:rotate(180deg); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 0;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(140,42,58,0.07), transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(201,162,75,0.10), transparent 45%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.76rem;
+    color:var(--cherry);
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .eyebrow::before, .eyebrow::after{content:"—"; opacity:0.5;}
+  h1.hero-title{
+    font-size:clamp(3.2rem, 9vw, 6.4rem);
+    line-height:0.95;
+    margin:18px 0 0;
+    color:var(--espresso);
+  }
+  h1.hero-title em{
+    font-style:italic;
+    color:var(--cherry);
+  }
+  .hero-sub{
+    max-width:560px; margin:22px auto 0;
+    font-size:1.12rem; line-height:1.55; color:rgba(42,29,22,0.82);
+  }
+  .hero-quote{
+    max-width:480px; margin:26px auto 0;
+    font-family:'Fraunces', serif; font-style:italic; font-size:1.15rem;
+    color:var(--espresso);
+  }
+  .hero-quote span{
+    display:block; margin-top:8px; font-family:'IBM Plex Mono', monospace;
+    font-style:normal; font-size:0.74rem; letter-spacing:0.04em;
+    text-transform:uppercase; color:var(--cherry);
+  }
+  .hero-ctas{
+    margin:34px 0 56px;
+    display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block; padding:15px 30px; border-radius:999px;
+    text-decoration:none; font-weight:600; font-size:0.95rem;
+    border:1.5px solid transparent; transition:transform 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{ background:var(--cherry); color:var(--cream); }
+  .btn-secondary{ background:transparent; border-color:var(--espresso); color:var(--espresso); }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section{ padding:72px 0; }
+  .section-head{
+    text-align:center; max-width:600px; margin:0 auto 48px;
+  }
+  .section-head .eyebrow{ margin-bottom:10px; }
+  .section-head h2{ font-size:clamp(2rem, 4vw, 2.7rem); color:var(--espresso); }
+  .section-head p{ margin-top:14px; font-size:1.02rem; color:rgba(42,29,22,0.75); }
+
+  /* ---------- MENU / BESTSELLERS ---------- */
+  .menu-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+  }
+  @media (max-width:900px){ .menu-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .menu-grid{grid-template-columns:1fr;} }
+  .menu-card{
+    background:var(--cream-2);
+    border-radius:18px;
+    padding:26px 22px;
+    border:1px solid var(--line);
+  }
+  .menu-card .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:0.7rem;
+    text-transform:uppercase; letter-spacing:0.08em; color:var(--toffee);
+  }
+  .menu-card h3{
+    font-size:1.35rem; margin-top:10px; color:var(--espresso);
+  }
+  .menu-card ul{
+    margin:14px 0 0; padding-left:18px; font-size:0.92rem; line-height:1.7;
+    color:rgba(42,29,22,0.85);
+  }
+
+  /* ---------- TESTIMONIAL TICKETS ---------- */
+  .cherry-band{
+    background:var(--espresso);
+    color:var(--cream);
+    padding-bottom:80px;
+  }
+  .cherry-band .section-head h2{ color:var(--cream); }
+  .cherry-band .section-head p{ color:rgba(251,241,225,0.72); }
+  .cherry-band .eyebrow{ color:var(--gold); }
+  .cherry-band .eyebrow::before, .cherry-band .eyebrow::after{ color:var(--gold); }
+
+  .ticket-row{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:28px 24px;
+  }
+  @media (max-width:900px){ .ticket-row{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .ticket-row{grid-template-columns:1fr;} }
+
+  .ticket{
+    position:relative;
+    background:var(--cream);
+    color:var(--ink);
+    padding:26px 22px 34px;
+    border-radius:6px 6px 0 0;
+    box-shadow:0 14px 30px rgba(0,0,0,0.25);
+  }
+  .ticket::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-11px; height:22px;
+    background:
+      linear-gradient(-45deg, var(--cream) 11px, transparent 0),
+      linear-gradient(45deg, var(--cream) 11px, transparent 0);
+    background-size:22px 22px;
+    background-position:bottom left;
+    background-repeat:repeat-x;
+  }
+  .ticket .stars{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--toffee); font-size:0.85rem; letter-spacing:0.1em;
+  }
+  .ticket blockquote{
+    margin:14px 0 0; font-family:'Fraunces', serif; font-size:1.05rem;
+    line-height:1.5; font-style:italic; color:var(--espresso);
+  }
+  .ticket .who{
+    margin-top:18px; padding-top:14px; border-top:1px dashed var(--line);
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+    text-transform:uppercase; letter-spacing:0.06em; color:var(--cherry);
+    display:flex; justify-content:space-between;
+  }
+
+  /* ---------- LOCATIONS ---------- */
+  .loc-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:24px;
+  }
+  @media (max-width:760px){ .loc-grid{grid-template-columns:1fr;} }
+  .loc-card{
+    border:1px solid var(--line); border-radius:18px; padding:30px;
+    background:var(--cream-2);
+  }
+  .loc-card h3{ font-size:1.3rem; color:var(--espresso); }
+  .loc-card .addr{
+    margin-top:10px; font-size:0.95rem; line-height:1.6; color:rgba(42,29,22,0.8);
+  }
+  .loc-card .hours{
+    margin-top:16px; font-family:'IBM Plex Mono', monospace; font-size:0.8rem;
+    color:var(--toffee); line-height:1.8;
+  }
+  .loc-card a.dir{
+    margin-top:18px; display:inline-block; font-size:0.88rem; font-weight:600;
+    color:var(--cherry); text-decoration:none; border-bottom:1.5px solid var(--cherry);
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:var(--cherry);
+    color:var(--cream);
+    text-align:center;
+    padding:64px 24px 76px;
+    position:relative;
+  }
+  .final-cta h2{
+    font-size:clamp(2.1rem, 5vw, 3.2rem);
+    max-width:640px; margin:0 auto;
+  }
+  .final-cta p{
+    margin-top:14px; font-size:1.02rem; color:rgba(251,241,225,0.85);
+  }
+  .final-cta .hero-ctas{ margin-top:30px; margin-bottom:0; }
+  .final-cta .btn-primary{ background:var(--cream); color:var(--cherry-dark); }
+  .final-cta .btn-secondary{ border-color:var(--cream); color:var(--cream); }
+
+  footer{
+    background:var(--espresso); color:rgba(251,241,225,0.6);
+    padding:32px 24px; text-align:center; font-size:0.82rem;
+  }
+  footer strong{ color:var(--cream); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="wordmark">Gateau</span>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#locations">Locations</a></li>
+    </ul>
+    <a class="nav-cta" href="#locations">Get directions</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Kazanchis · Addis Ababa</span>
+    <h1 class="hero-title">Cakes worth<br>the <em>wait.</em></h1>
+    <p class="hero-sub">
+      A neighbourhood café built around one thing: pastry done properly.
+      Almond croissants, Black Forest cake, and a full tsome (fasting) menu —
+      pull up a chair opposite the UN compound.
+    </p>
+    <p class="hero-quote">
+      "The tsome chocolate cake was the best cake I've ever had in Addis. Not too sweet."
+      <span>— star, Google review</span>
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#menu">See what's fresh today</a>
+      <a class="btn btn-secondary" href="#locations">Get directions</a>
+    </div>
+  </div>
+  <div class="scallop" style="--scallop-color:var(--gold)"></div>
+</section>
+
+<section class="section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">On the counter</span>
+      <h2>What people actually order</h2>
+      <p>Pulled straight from what regulars keep coming back for.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <span class="tag">Pastry case</span>
+        <h3>Pastries</h3>
+        <ul>
+          <li>Almond croissant</li>
+          <li>Pain au chocolat</li>
+          <li>Apple pie</li>
+          <li>Donuts</li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <span class="tag">Fan favourite</span>
+        <h3>Cakes</h3>
+        <ul>
+          <li>Black Forest cake</li>
+          <li>Chocolate cake</li>
+          <li>Cookie cheesecake</li>
+          <li>Tsome (fasting) chocolate cake</li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <span class="tag">Orthodox fasting menu</span>
+        <h3>Tsome</h3>
+        <ul>
+          <li>Fasting pasta with vegetables</li>
+          <li>Vegetable sandwiches</li>
+          <li>Salad</li>
+          <li>Fasting Black Forest &amp; chocolate cake</li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <span class="tag">Breakfast &amp; lunch</span>
+        <h3>Savoury</h3>
+        <ul>
+          <li>Salmon bagel</li>
+          <li>Croissant cheese omelette</li>
+          <li>Chicken sandwich with a side</li>
+          <li>Croissant &amp; avocado toss</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scallop"></div>
+
+<section class="section cherry-band" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Straight from Google</span>
+      <h2>What regulars are saying</h2>
+      <p>Real reviews, kept exactly as written.</p>
+    </div>
+    <div class="ticket-row">
+      <div class="ticket">
+        <div class="stars">★★★★★</div>
+        <blockquote>"All you could want from a coffee shop in Kazanchis. Delicious food, great service, relaxing ambiance, Instagram friendly vibes. I had their Bagel Salmon sandwich and it was a delight."</blockquote>
+        <div class="who"><span>Sona Dadi</span><span>Local Guide</span></div>
+      </div>
+      <div class="ticket">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I do enjoy this place, mainly because they have the most delicious pastries: apple pie, pain au chocolat, donuts and the almond croissant."</blockquote>
+        <div class="who"><span>Nei M.</span><span>Local Guide</span></div>
+      </div>
+      <div class="ticket">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Absolutely love their cookie cheesecake. Gateau is one of the best places for pastries."</blockquote>
+        <div class="who"><span>Bamlak Alemayehu</span><span>Google review</span></div>
+      </div>
+      <div class="ticket">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We went there with friends for a birthday dinner and tried their fasting menu — honestly, we were impressed!"</blockquote>
+        <div class="who"><span>Google review</span><span>Fasting menu</span></div>
+      </div>
+      <div class="ticket">
+        <div class="stars">★★★★★</div>
+        <blockquote>"A great cafe with good atmosphere and amazing cake."</blockquote>
+        <div class="who"><span>Alazar.M Mekonen</span><span>Local Guide</span></div>
+      </div>
+      <div class="ticket">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Super nice staff and great variety of cakes."</blockquote>
+        <div class="who"><span>Ana Banda</span><span>Local Guide</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="locations">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Find us</span>
+      <h2>Two branches, one pastry case</h2>
+      <p>Both locations run the same menu — walk in for a table or call ahead for a cake.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <h3>Kazanchis</h3>
+        <p class="addr">Opposite the UN compound, Kazanchis, Addis Ababa</p>
+        <p class="hours">MON–SUN&nbsp;&nbsp;7:00 – 22:00</p>
+        <a class="dir" href="#">Get directions →</a>
+      </div>
+      <div class="loc-card">
+        <h3>Second branch</h3>
+        <p class="addr">Same menu, same bakers — new location, city centre</p>
+        <p class="hours">MON–SUN&nbsp;&nbsp;7:00 – 22:00</p>
+        <a class="dir" href="#">Get directions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scallop" style="--scallop-color:var(--espresso)"></div>
+
+<section class="final-cta">
+  <h2>Save yourself a table.</h2>
+  <p>Birthday dinner, fasting-menu lunch, or just a slice on the way home — walk in, or call ahead for cakes.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="#locations">Get directions</a>
+    <a class="btn btn-secondary" href="tel:+251000000000">Call to order a cake</a>
+  </div>
+</section>
+
+<footer>
+  <strong>Gateau</strong> — Kazanchis, Addis Ababa. Menu and reviews shown are drawn from real customer feedback.
+</footer>
+
+</body>
+</html>
