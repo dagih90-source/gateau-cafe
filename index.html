@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
-    <title>Gateau Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateau — Kazanchis, Addis Ababa</title>
     <link rel="icon" type="image/png" href="logo.png">
-</head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gateau — Kazanchis, Addis Ababa</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#FBF1E1;
@@ -27,7 +24,6 @@
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    <img src="cake.jpg" alt="Delicious Chocolate Cake" width="300">
     margin:0;
     background:var(--cream);
     color:var(--ink);
@@ -39,6 +35,9 @@
   h1,h2,h3{font-family:'Fraunces', serif; margin:0; font-weight:600;}
   p{margin:0;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  .brand{display:flex; align-items:center; gap:12px}
+  .logo{height:40px; width:auto; display:block; border-radius:6px}
 
   a:focus-visible, button:focus-visible{
     outline:3px solid var(--cherry);
@@ -280,7 +279,10 @@
 
 <nav class="nav">
   <div class="wrap">
-    <span class="wordmark">Gateau</span>
+    <div class="brand">
+      <a href="/" class="logo-link"><img src="logo.png" alt="Gateau logo" class="logo"></a>
+      <span class="wordmark">Gateau</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#menu">Menu</a></li>
       <li><a href="#reviews">Reviews</a></li>
@@ -375,7 +377,7 @@
     <div class="ticket-row">
       <div class="ticket">
         <div class="stars">★★★★★</div>
-        <blockquote>"All you could want from a coffee shop in Kazanchis. Delicious food, great service, relaxing ambiance, Instagram friendly vibes. I had their Bagel Salmon sandwich and it was a delight."</blockquote>
+        <blockquote>"All you could want from a coffee shop in Kazanchis. Delicious food, great service, relaxing ambiance, Instagram friendly vibes. I had their Bagel Salmon sandwich and it was a deli[...]"
         <div class="who"><span>Sona Dadi</span><span>Local Guide</span></div>
       </div>
       <div class="ticket">
